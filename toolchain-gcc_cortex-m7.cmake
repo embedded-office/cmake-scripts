@@ -83,8 +83,10 @@ function(setOutfile target filename)
   set_target_properties(${target} PROPERTIES OUTPUT_NAME "${filename}")
   set(CMAKE_EXECUTABLE_SUFFIX_C .elf CACHE STRING "")
 
-  # place the mapfile with same base name and extension .map in
-  # same output directory:
+  # define the output location:
+  set_target_properties(${target} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/out")
+
+  # place the mapfile with same base name and extension .map in same output directory:
   target_link_options(${target}
     PUBLIC
       -Wl,-Map,$<TARGET_FILE_DIR:${target}>/$<TARGET_FILE_BASE_NAME:${target}>.map
