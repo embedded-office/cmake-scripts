@@ -108,7 +108,7 @@ function(setOutfile target filename)
   set(CMAKE_EXECUTABLE_SUFFIX_C .elf CACHE STRING "")
 
   # define the output location:
-  set_target_properties(${target} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/out")
+  set_target_properties(${target} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/out/$<LOWER_CASE:$<CONFIG>>")
 
   # place the mapfile with same base name and extension .map in same output directory:
   target_link_options(${target}
