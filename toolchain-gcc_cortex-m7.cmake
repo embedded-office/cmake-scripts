@@ -93,6 +93,7 @@ function(setOutfile target filename)
       -Xlinker
       --cref
       -Wl,--print-memory-usage
+      -specs=nosys.specs
   )
 endfunction()
 
