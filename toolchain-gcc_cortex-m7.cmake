@@ -53,19 +53,43 @@ set(
 
 # additional flags depending on the config command line switch
 set(CMAKE_C_FLAGS_DEBUG          # --config Debug
-  "-O0 -g -gdwarf-2"
+  "-O0 -g3 -gdwarf"
   CACHE STRING ""
 )
+set(CMAKE_ASM_FLAGS_DEBUG
+  "-O0 -g3 -gdwarf"
+  CACHE STRING ""
+)
+set(
+  CMAKE_EXE_LINKER_FLAGS_DEBUG
+  "-g3 -gdwarf"
+  CACHE STRING "" FORCE
+)
+
 set(CMAKE_C_FLAGS_RELEASE        # --config Release
-  "-O2"
+  "-O3"
   CACHE STRING ""
 )
+set(CMAKE_ASM_FLAGS_RELEASE
+  "-O3"
+  CACHE STRING ""
+)
+
 set(CMAKE_C_FLAGS_MINSIZEREL     # --config MinSizeRel
-  ""
+  "-Os"
   CACHE STRING ""
 )
+set(CMAKE_ASM_FLAGS_MINSIZEREL
+  "-Os"
+  CACHE STRING ""
+)
+
 set(CMAKE_C_FLAGS_RELWITHDEBINFO # --config RelWithDebInfo
-  ""
+  "-O2 -g"
+  CACHE STRING ""
+)
+set(CMAKE_ASM_FLAGS_RELWITHDEBINFO
+  "-O2 -g"
   CACHE STRING ""
 )
 
