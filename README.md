@@ -1,7 +1,7 @@
 
 # CMake Scripts for Embedded Development
 
-This repository is intended as a Git submodule in `/cmake` within your Embedded programming project.
+This [repository](https://github.com/embedded-office/cmake-scripts) is intended as a Git submodule in `/cmake` within your Embedded programming project.
 
 ## Usage
 
